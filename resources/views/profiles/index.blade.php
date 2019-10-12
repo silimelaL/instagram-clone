@@ -4,7 +4,7 @@
 <div class="container col-8 pt-3">
 <div class="row">
     <div class="col-3">
-            <img src="/img/web.jpg" style="height:150px" class="rounded-circle">
+            <img src="/img/laravel-logo.png" style="height:150px" class="rounded-circle">
     </div>
     <div class="col-9 pt-3">
         <div class="d-flex justify-content-between align-items-baseline">
@@ -24,13 +24,13 @@
 </div>
 <div class="row pt-5">
     <div class="col-4">
-        <img src="{{asset('posts/DHL-escalator-ad.jpg')}}" class="w-100">
+        <img src="{{asset('posts/post1.jpg')}}" class="w-100">
     </div>
     <div class="col-4">
-            <img src="{{asset('posts/psl.jpg')}}" class="w-100">
+            <img src="{{asset('posts/post3.jpg')}}" class="w-100">
         </div>
         <div class="col-4">
-                <img src="{{asset('posts/retail-slide.jpg')}}" class="w-100">
+                {{-- <img src="{{asset('posts/post2.jpeg')}}" class="w-100"> --}}
             </div>
 </div>
 </div>
