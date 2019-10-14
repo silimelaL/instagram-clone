@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 use App\User;
 
 class ProfilesController extends Controller
@@ -25,10 +26,22 @@ class ProfilesController extends Controller
             'title' => 'required',
             'description' => 'required',
             'url' => 'url',
-            'image'
+            'image'=>''
         ]);
+        
 
-        auth()->user()->profile->update($data);
+        if(request("image"))
+        {
+            $imagePath=request('image')->store('profile','public');
+            $image=Image::make(public_path("storage/{$imagePath}"))->fit('800','800');
+
+            $array_image=['image'=>$imagePath];
+        }
+
+        auth()->user()->profile->update(array_merge(
+            $data,
+            $array_image ?? []
+        ));
 
         return redirect("/profile/{$user->id}");
     }

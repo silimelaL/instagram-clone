@@ -28,6 +28,16 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    protected static function boot()
+    {
+        parent::boot();
+        static::created(function($user){
+            $user->profile()->create([
+                'title'=>$user->username
+            ]);
+        });
+    }
+
     /**
      * The attributes that should be cast to native types.
      *

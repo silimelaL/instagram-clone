@@ -4,11 +4,14 @@
 <div class="container col-8 pt-3">
 <div class="row">
     <div class="col-3">
-            <img src="/img/laravel-logo.png" style="height:150px" class="rounded-circle">
+    <img src="/storage/{{$user->profile->image ?? "profile/logo.png"}}" class="rounded-circle w-100">
     </div>
     <div class="col-9 pt-3">
         <div class="d-flex justify-content-between align-items-baseline">
-            <h3>{{$user->username}}</h3>
+        <div class="d-flex align-items-center pb-3">
+            <div class="h5 font-weight-bold">{{$user->username}}</div>
+           <follow-botton>bbvbn</follow-botton>
+        </div>
         @can('update',$user->profile)
             <a href="/post/create">Add Post</a>
         @endcan

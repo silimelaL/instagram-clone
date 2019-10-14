@@ -7,8 +7,13 @@
         </div>
         <div class="col-4">
             <div>
-                <h4>{{$post->user->username}}</h4>
-                <p>{{$post->caption}}<p>
+                <h6>
+                    <a class="text-dark" href="/profile/{{$post->user->id}}"><img src="/storage/{{$post->user->profile->image ?? "profile/logo.png"}}" height="20px" class="rounded-circle">
+                      <strong> {{$post->user->username}}</strong>
+                    </a>
+                    <a href="#" class="font-weight-bold pl-2">Follow</a>
+                </h6>
+                <p class="pt-3">{{$post->caption}}<p>
             </div>
         </div>
     </div>
