@@ -11,4 +11,9 @@ class Profile extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function followers()
+    {
+        //a profile can follow many users
+        return $this->belongsToMany(User::class);
+    }
 }
