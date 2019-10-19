@@ -25,9 +25,7 @@
                 <div class="col-md-6">
                     <input type="file" class="form-control-file" id="image" name="image" />
                     @error('image')
-                   
                         <strong>{{ $message }}</strong>
-                    
                     @enderror
                 </div>
             </div>
