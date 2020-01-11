@@ -20,7 +20,7 @@
             @endcan
             <div class="d-flex">
                 <div class="pr-5"><strong>{{$postsCount}}</strong>posts</div>
-                <div class="pr-5"><strong>{{$followersCount}}</strong>followers</div>
+                <div class="pr-5"><followers-count followers="{{$followersCount}}"></followers-count>followers</div>
                 <div class="pr-5"><strong>{{$followingCount}}</strong>following</div>
             </div>
             <div class="pt-3 font-weight-bold">{{$user->profile->title ?? "No title"}}</div>
