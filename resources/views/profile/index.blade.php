@@ -9,7 +9,9 @@
             <div class="d-flex justify-content-between align-items-baseline">
                 <div class="d-flex align-items-center pb-3">
                     <div class="h5 font-weight-bold">{{$user->username}}</div>
+                    @if($user->id!=auth()->user()->id)
                     <follow-botton user-id={{$user->id}} follows="{{$follows}}"></follow-botton>
+                    @endif
                 </div>
                 @can('update',$user->profile)
                 <a href="/post/create">Add Post</a>
