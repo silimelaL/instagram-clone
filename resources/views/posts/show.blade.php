@@ -8,8 +8,10 @@
         <div class="col-4">
             <div>
                 <h6>
-                    <a class="text-dark" href="/profile/{{$post->user->id}}"><img src="/storage/{{$post->user->profile->image ?? "profile/logo.png"}}" height="20px" class="rounded-circle">
-                      <strong> {{$post->user->username}}</strong>
+                    <a class="text-dark" href="/profile/{{$post->user->id}}"><img
+                            src="/storage/{{$post->user->profile->image ?? "profile/profile.jpg"}}" height="20px"
+                            class="rounded-circle">
+                        <strong> {{$post->user->username}}</strong>
                     </a>
                     <a href="#" class="font-weight-bold pl-2">Follow</a>
                 </h6>
