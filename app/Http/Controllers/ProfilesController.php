@@ -36,10 +36,13 @@ class ProfilesController extends Controller
 
 
         if (request("image")) {
-            $imagePath = request('image')->store('profile', 'public');
-            $image = Image::make(public_path("storage/{$imagePath}"))->fit('800', '800');
+            $imagePath = request('image');
+            $imageName = time() . '.' . request('image')->extension();
 
-            $array_image = ['image' => $imagePath];
+            $imagePath->move(public_path('store/profile'), $imageName);
+            // $imagePath = Image::make("/store/profile/{$imagePath}")->fit('800', '800');
+
+            $array_image = ['image' => $imageName];
         }
 
         auth()->user()->profile->update(array_merge(

@@ -6,7 +6,7 @@
 
         <div class="col-4">
             <a href="/post/{{$post->id}}">
-                <img src="/storage/{{$post->image}}" class="w-100" width="auto" height="300px">
+                <img src="/store/{{$post->image}}" class="w-100" width="auto" height="300px">
             </a>
             <p>
                 <span class="font-weight-bold">

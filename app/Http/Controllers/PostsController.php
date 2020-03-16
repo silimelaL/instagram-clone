@@ -28,14 +28,14 @@ class PostsController extends Controller
     {
         $data = request()->validate(['caption' => 'required', 'image' => ['required', 'image']]);
 
-        $imagePath = request('image')->store('uploads', 'public');
+        $imagePath = request('image');
+        $imageName = time() . '.' . request('image')->extension();
 
-        $image = Image::make(public_path("storage/{$imagePath}"))->fit('1200', '800');
-        $image->save();
+        $imagePath->move(public_path('store'), $imageName);
 
         auth()->user()->posts()->create([
             'caption' => $data['caption'],
-            'image' => $imagePath,
+            'image' => $imageName,
 
         ]);
 
